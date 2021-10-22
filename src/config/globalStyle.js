@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: teal;
+    color: ${props => props.theme.text};
     background-color: ${props => props.theme.primary};
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
