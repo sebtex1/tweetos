@@ -8,9 +8,10 @@ const Routes = () => {
                 <Route exact path="/">
                     <Login />
                 </Route>
+                <Redirect to="/"></Redirect>
             </Switch>
         </Router>
-    )
+)
 }
 
 export default Routes
