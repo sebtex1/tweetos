@@ -15,7 +15,7 @@ const ListTweets = (props) => {
           </OneTweet>
         )
       })}
-      <NoMoreTweet>Pas de nouveau tweet dans votre TL</NoMoreTweet>
+      <NoMoreTweet>{props.page === 'home' ? 'Pas de nouveau tweet dans votre TL' : 'Vous pouvez rechercher ici des users et leurs tweets'}</NoMoreTweet>
       <IconTweetos />
     </Container>
   );

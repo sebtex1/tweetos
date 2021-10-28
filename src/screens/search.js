@@ -12,28 +12,33 @@ const Search = () => {
 
   useEffect(() => {
     setTimeline(JSON.parse(localStorage.getItem('timeline')))
-    setFillteredTimeline(timeline.filter(t => t.username.includes(searchValue)))
+    setFillteredTimeline(timeline.filter(t => t.username.toLowerCase().includes(searchValue.toLowerCase()) || t.content.toLowerCase().includes(searchValue.toLowerCase())))
   }, [searchValue])
 
   return (
     <div>
       <TopBar />
-      <h1>Search:</h1>
-      <StyledInput value={searchValue} onChange={event => setSearchValue(event.target.value)} />
-      { fillteredTimeline !== '' ? <ListTweets list={fillteredTimeline}/> : ''}
+      <Container>
+        <h1>Search:</h1>
+        <StyledInput value={searchValue} onChange={event => setSearchValue(event.target.value)} />
+      </Container>
+      { fillteredTimeline !== '' ? <ListTweets list={fillteredTimeline} page="search" /> : ''}
       <NavBar page="search"/>
     </div>
   );
 };
 
+const Container = styled.div`
+  border-bottom: 1px solid;
+  border-color: ${props => props.theme.borderColor};
+`
+
 const StyledInput = styled.input`
   background: none;
   color: ${props => props.theme.text};
   font-size: 18px;
-  border: none;
-  margin-top: 10px;
+  border: none; 
   margin-bottom: 10px;
-  padding: 10px 10px 10px 5px;
   border-radius: 0;
   border-bottom: 1px solid grey;
   transition: border-bottom 100ms all;

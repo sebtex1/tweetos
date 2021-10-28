@@ -31,7 +31,12 @@ const Tweet = (props) => {
     //   }
     // }
     if (key === 'isLike' && value === true) {
-      localStorage.setItem('likedTweets', JSON.stringify(tweetInfos))
+      const likedTimeline = JSON.parse(localStorage.getItem('likedTweets'))
+      if (likedTimeline !== null) {
+        localStorage.setItem('likedTweets', JSON.stringify([...likedTimeline, tweetInfos]))
+      } else {
+        localStorage.setItem('likedTweets', JSON.stringify([tweetInfos]))
+      }
     }
     console.log(tweetInfos)
   }
