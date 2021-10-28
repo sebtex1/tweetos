@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.text};
     background-color: ${props => props.theme.primary};
     font-family: Open-Sans, Helvetica, Sans-Serif;
+    border-color: ${props => props.theme.borderColor};
+    /* overscroll-behavior: none; */
   }
 `;
  

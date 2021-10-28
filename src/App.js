@@ -7,7 +7,6 @@ import { darkTheme } from './config/themes'
 
 export default function App() {
   return (
-    
     <ThemeProvider theme={darkTheme}>
       <GlobalStyle/>
       <Routes></Routes>
