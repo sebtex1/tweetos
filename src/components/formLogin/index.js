@@ -27,8 +27,6 @@ const FormLogin = () => {
       url: 'https://easy-login-api.herokuapp.com/users/login',
       data: params
     }).then((response) => {
-      console.log(response)
-      console.log(response.headers['x-access-token'])
       if (response.headers['x-access-token'] !== undefined) {
         localStorage.setItem('token', response.headers['x-access-token'])
         localStorage.setItem('username', usernameValue)

@@ -38,7 +38,6 @@ const Tweet = (props) => {
         localStorage.setItem('likedTweets', JSON.stringify([tweetInfos]))
       }
     }
-    console.log(tweetInfos)
   }
 
   return (
